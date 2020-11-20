@@ -1,0 +1,53 @@
+<ng-container *ngIf="check(); else elseBlock">
+    <ng-container *ngFor="let items of posts">
+        <ng-container *ngFor="let user of users">
+            <div class="container con my-5" *ngIf="id == items.id && user.id==items.userId">
+                <div class="heading">
+                    {{items.title}} <p class="float-right">by : {{user.name}}</p>
+                </div>
+                <hr>
+                <div class="content">
+                    {{items.body}}
+                </div>   
+                <div class="btn btn-primary mt-5" (click)="displayComment()">
+                    comments({{comment()}})
+                </div> 
+                <div [class.d-none]="commentDisplayed" class="commentCls">
+                   <ng-container *ngFor="let comment of comments">
+                        <ng-container *ngIf="id == comment.postId">
+                            <div class="commentDiv">
+                                <div class="commentHeading">
+                                    {{comment.name+" ("+comment.email+")"}}
+                                </div>
+                                <div class="commentBody">
+                                    {{comment.body}}
+                                </div>
+                            </div>   
+                        </ng-container>
+                   </ng-container>
+                </div>      
+            </div>
+        </ng-container>
+    </ng-container>
+</ng-container>
+<ng-template #elseBlock>
+    <div class="container cont my-5" [class.d-none]="display">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="error-template">
+                    <h1>
+                        Oops!</h1>
+                    <h2>
+                        Data Not Found</h2>
+                    <div class="error-details">
+                        Sorry, an error has occured, Requested page not found!
+                    </div>
+                    <div class="error-actions">
+                        <a  class="btn btn-primary btn-lg" [routerLink]="['../']"><span class="glyphicon glyphicon-home"></span>
+                            Take Me Posts </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

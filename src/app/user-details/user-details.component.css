@@ -1,0 +1,44 @@
+.con{
+    padding: 0;
+    margin: auto;
+    width: 40vw;
+    border: 3px solid rgba(0, 0, 0, .2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+}
+.error-template {
+    padding: 40px 15px;text-align: center;
+}
+.error-actions {
+    margin-top:15px;margin-bottom:15px;
+}
+.error-actions .btn {
+     margin-right:10px;
+}
+.cont{
+    height: 200px;
+}
+.card-body{
+    margin: auto;
+    border: 0;
+}
+
+
+.header{
+    display: inline-block;
+    font-weight: bolder;
+    width: 25%;
+    margin-left: 10%;
+}
+.heading{
+    display: block;
+    font-weight: bolder;
+    padding: 10px;
+    background-color: #D6D6D6;
+}
+.details{
+    display: inline-block;
+    width: 60%;
+}
+.card-header > h5{
+    display: inline;
+}

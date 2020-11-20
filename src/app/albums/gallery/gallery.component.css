@@ -1,0 +1,40 @@
+.container-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    text-align: center;
+  }
+
+  .container-flex > div {
+    width: 220px;
+    margin: 15px;
+    text-align: center;
+  }
+  .card-body{
+      height: 90px;
+      overflow: hidden;
+  }
+
+  a:hover{
+      cursor: pointer;
+  }
+  .container-flex > div > .card:hover{
+     background-color: paleturquoise;
+      
+  }
+  img{
+    height: 100%;
+    width:100%;
+  }
+  .error-template {
+    padding: 40px 15px;text-align: center;
+}
+.error-actions {
+    margin-top:15px;margin-bottom:15px;
+}
+.error-actions .btn {
+     margin-right:10px;
+}
+.container{
+    height: 350px;
+}

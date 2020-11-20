@@ -1,0 +1,26 @@
+<div class="container-flex my-5 mx-5">
+    <div  *ngFor="let items of albums | slice: startIndex:lastindex">
+        <ng-container *ngFor="let user of users">
+            <ng-container *ngIf="user.id == items.userId">
+                <div class="card">
+                    <div class=card-header>
+                        {{items.id + "  " + items.title }} 
+                    </div>
+                    <div class="card-body">
+                        <b>By :</b>{{user.name}}
+                    </div>
+                    <div class=card-footer>
+                        <a class="float-right" [routerLink]="['gallery',items.id]">click</a>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+        
+    </div>
+</div>
+<div class="my-3">
+    <nav aria-label="Page navigation"> 
+        <a class="page-link float-left my-3 mx-3"  *ngIf="currentPage > 0" (click)='nextPrevious(false)'>Previous</a>
+        <a class="page-link float-right my-3 mx-3" *ngIf="currentPage+1 < totalPages" (click)='nextPrevious(true)'>Next</a>
+    </nav>
+</div>

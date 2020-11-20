@@ -1,0 +1,25 @@
+.container-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    text-align: center;
+  }
+
+  .container-flex > div {
+    width: 220px;
+    margin: 15px;
+    text-align: center;
+  }
+  .card-header{
+      height: 90px;
+      overflow: hidden;
+      text-align: left;
+  }
+
+  a:hover{
+      cursor: pointer;
+  }
+  .container-flex > div > .card:hover{
+     background-color: paleturquoise;
+      
+  }

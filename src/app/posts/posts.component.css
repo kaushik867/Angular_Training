@@ -1,0 +1,45 @@
+.page-link {
+    cursor: pointer !important;
+}
+
+.navigation a{
+    background-color: silver;
+}
+.container-flex{
+    display:flex;
+    flex-wrap: wrap;
+
+}
+.container-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    text-align: center;
+  }
+
+  .container-flex > div {
+    width: 520px;
+    margin: 15px;
+    text-align: left;
+    margin-left: 70px;
+  }
+  .card-header{
+      height: 40px;
+  }
+
+  a:hover{
+      cursor: pointer;
+  }
+  .container-flex > div > .card:hover{
+     background-color: paleturquoise;
+      
+  }
+  .card-header,.card-footer{
+      border: 0;
+  }
+  .card-footer{
+      height: 40px;
+  }
+  a{
+      text-decoration: none;
+  }
