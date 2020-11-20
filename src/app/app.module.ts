@@ -16,6 +16,8 @@ import { AlbumComponent } from './albums/album/album.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { PostDetailsComponent } from './post-details/post-details.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
