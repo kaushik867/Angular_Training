@@ -2,7 +2,7 @@
     <div  *ngFor="let items of albums | slice: startIndex:lastindex">
         <ng-container *ngFor="let user of users">
             <ng-container *ngIf="user.id == items.userId">
-                <div class="card">
+                <div class="card my-1">
                     <div class=card-header>
                         {{items.id + "  " + items.title }} 
                     </div>

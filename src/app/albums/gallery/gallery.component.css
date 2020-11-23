@@ -6,8 +6,8 @@
   }
 
   .container-flex > div {
-    width: 220px;
-    margin: 15px;
+    width: 18%;
+    margin: 10px;
     text-align: center;
   }
   .card-body{
@@ -21,6 +21,9 @@
   .container-flex > div > .card:hover{
      background-color: paleturquoise;
       
+  }
+  .card-body{
+    height:150px;
   }
   img{
     height: 100%;
@@ -37,4 +40,27 @@
 }
 .container{
     height: 350px;
+}
+
+@media only screen and (max-width: 700px) and (min-width: 300px){
+  .container-flex > div{
+     margin-left: 10%;
+     width: 80%;
+     margin-right: 10%;
+     overflow: hidden;
+  } 
+  .card-body{
+    height: 250px;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1200px){
+  .container-flex > div{
+     margin: 10%;
+     width: 30%;
+     overflow: hidden;
+  } 
+  .card-body{
+    height: 250px;
+  }
 }

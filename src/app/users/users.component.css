@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     margin: auto;
     text-align: center;
+    width: auto;
   }
 
   .container-flex > div {
@@ -11,6 +12,21 @@
     text-align: left;
     margin-left: 70px;
   }
+  @media only screen and (max-width: 600px) {
+      .container-flex > div{
+         margin-left: 0px;
+         margin-right: 0px;
+         overflow: hidden;
+      }
+  }
+  @media only screen and (min-width: 600px) and (max-width: 1305px )
+  {
+    .container-flex > div {
+      margin-left: 25%;
+      margin-right: 25%;
+    }
+  }
+
   .card-header{
       height: 40px;
       overflow: hidden;
