@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PhotosService } from 'src/app/Services/photos.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class GalleryComponent implements OnInit {
 id;
 display=true;
 photos=[];
-  constructor(private router: ActivatedRoute, private _http: PhotosService) { }
+  constructor(private router: ActivatedRoute, private _http: PhotosService, private route: Router) { }
 
   ngOnInit(): void {
    let id = this.router.snapshot.paramMap.get('id');
@@ -19,7 +19,8 @@ photos=[];
    this._http.getPhotos().subscribe(data=>{
    this.photos=data;
    this.display=false;
-   })
+   },error=>{ 
+     this.route.navigate(['/error'])});
   }
 check(){
   if(this.photos.length){

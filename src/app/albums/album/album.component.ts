@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlbumsService } from 'src/app/Services/albums.service';
 import { UsersService } from 'src/app/Services/users.service';
 
@@ -16,16 +17,16 @@ export class AlbumComponent implements OnInit {
   dataLen=10;
   users=[];
   albums=[];
-  constructor(private _http: AlbumsService, private _httpUser:UsersService) { }
+  constructor(private _http: AlbumsService, private _httpUser:UsersService, private route: Router) { }
 
   ngOnInit(): void {
     this._http.getAlbums().subscribe(data=>{
       this.albums=data;
       this.totalPages=data.length/this.dataLen;
-  });
+  },error=>{ this.route.navigate(['error'])});
   this._httpUser.getUser().subscribe(data=>{
     this.users = data;
-  })
+  },error=>{this.route.navigate(['error'])})
 }
 
   nextPrevious(flag){

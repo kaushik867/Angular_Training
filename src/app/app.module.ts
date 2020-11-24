@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -17,7 +17,11 @@ import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { ServerErrorComponent } from './server-error/server-error.component';
+import { LoaderComponent } from './loader/loader.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { InterceptorService } from './loader/interceptor.service';
 
 
 @NgModule({
@@ -33,15 +37,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AlbumComponent,
     UsersComponent,
     UserDetailsComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    ServerErrorComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

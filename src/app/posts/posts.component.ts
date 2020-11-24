@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PostsService } from '../Services/posts.service';
 
 @Component({
@@ -13,12 +14,14 @@ export class PostsComponent implements OnInit {
   lastIndex= 10;
   totalPage;
   currentPage=0;
-  constructor(private _http: PostsService) { }
+  constructor(private _http: PostsService, private route: Router) { }
   posts=[];
   ngOnInit(): void {
     this._http.getPosts().subscribe(data=>{
       this.posts=data;
       this.totalPage=data.length/this.dataLen;
+    },error=>{
+      this.route.navigate(['error']);
     })
   }
 

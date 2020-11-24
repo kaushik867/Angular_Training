@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommentsService } from '../Services/comments.service';
 import { PostsService } from '../Services/posts.service';
 import { UsersService } from '../Services/users.service';
@@ -17,7 +17,7 @@ export class PostDetailsComponent implements OnInit {
   currentComment=0;
   commentDisplayed=true;
   constructor(private router: ActivatedRoute, private _httpPost: PostsService, private _httpComm: CommentsService, 
-    private _httpUser: UsersService ) { }
+    private _httpUser: UsersService, private route: Router ) { }
   id;
   display=true;
   ngOnInit(): void {
@@ -25,13 +25,13 @@ export class PostDetailsComponent implements OnInit {
     this._httpPost.getPosts().subscribe(data=>{
       this.posts=data;
       this.display=false;
-    })
+    },error=>{ this.route.navigate(['./error'])})
     this._httpComm.getComments().subscribe(data=>{
       this.comments=data;
-    })
+    },error=>{this.route.navigate(['./error'])})
     this._httpUser.getUser().subscribe(data=>{
       this.users=data;
-    })
+    },error=>{this.route.navigate(['./error'])})
   }
 
 

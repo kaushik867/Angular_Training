@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoaderserviceService } from '../loader/loaderservice.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 public isCollapsed=true;
-  constructor() { }
+  constructor(public loader: LoaderserviceService) { }
 
   ngOnInit(): void {
   }

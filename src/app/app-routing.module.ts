@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { PostsComponent } from './posts/posts.component';
+import { ServerErrorComponent } from './server-error/server-error.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UsersComponent } from './users/users.component';
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   },
   { path: 'users' , component: UsersComponent},
   { path: 'users/:id' , component: UserDetailsComponent},
+  { path: 'error' , component: ServerErrorComponent},
   { path: '**' , component: PageNotFoundComponent}
 ];
 
