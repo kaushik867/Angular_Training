@@ -44,3 +44,10 @@
        margin-right: 10%;
        overflow: hidden;
     } }
+
+    .mat-raised-button{
+      background-color: #007bff;
+    }
+    a{
+       text-decoration: none;
+    }

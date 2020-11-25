@@ -1,15 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="">BlogPosts</a>
+    <a mat-button class="navbar-brand" href="">BlogPosts</a>
     <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarNavAltMarkup" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [ngbCollapse]="isCollapsed">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" [routerLink]="['posts']" routerLinkActive="active">Posts</a>
-        <a class="nav-item nav-link" [routerLink]="['album']" routerLinkActive="active">Album</a> 
-        <a class="nav-item nav-link" [routerLink]="['users']" routerLinkActive="active">User</a> 
+        
+        <a mat-button class="nav-item nav-link" [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><mat-icon>home</mat-icon> Home <span class="sr-only">(current)</span></a>
+        <a mat-button class="nav-item nav-link" [routerLink]="['posts']" routerLinkActive="active"><mat-icon>post_add</mat-icon>Posts</a>
+        <a mat-button class="nav-item nav-link" [routerLink]="['album']" routerLinkActive="active"> <mat-icon>photo_album</mat-icon>Album</a> 
+        <a mat-button class="nav-item nav-link" [routerLink]="['users']" routerLinkActive="active"><mat-icon>group</mat-icon>Users</a> 
       </div>
     </div>
   </nav>
+  
   <app-loader *ngIf="loader.isLoading | async"></app-loader>

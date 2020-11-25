@@ -9,9 +9,9 @@
                 <div class="content">
                     {{items.body}}
                 </div>   
-                <div class="btn btn-primary mt-5" (click)="displayComment()">
+                <button mat-raised-button class="btn btn-primary mt-5" (click)="displayComment()">
                     comments({{comment()}})
-                </div> 
+                </button> 
                 <div [class.d-none]="commentDisplayed" class="commentCls">
                    <ng-container *ngFor="let comment of comments">
                         <ng-container *ngIf="id == comment.postId">

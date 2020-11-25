@@ -42,3 +42,9 @@
   .card-header,.card-footer{
       border: 0;
   }
+  .mat-raised-button{
+    background-color: #007bff;
+  }
+  a{
+    text-decoration: none;
+  }

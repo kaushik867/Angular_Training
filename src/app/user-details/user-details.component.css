@@ -46,6 +46,6 @@
     display: inline-block;
     width: 60%;
 }
-.card-header > h5{
+.card-header > h2{
     display: inline;
 }
