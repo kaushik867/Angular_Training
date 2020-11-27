@@ -20,7 +20,7 @@ export class AlbumComponent implements OnInit {
   albums=[];
   
   constructor(private _http: AlbumsService, private _httpUser:UsersService, private route: Router,
-    private loader: LoaderserviceService) { }
+    public loader: LoaderserviceService) { }
 
   ngOnInit(): void {
     this._http.getAlbums().subscribe(data=>{

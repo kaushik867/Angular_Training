@@ -13,7 +13,7 @@ id;
 display=true;
 photos=[];
   constructor(private router: ActivatedRoute, private _http: PhotosService, private route: Router,
-    private loader: LoaderserviceService) { }
+    public loader: LoaderserviceService) { }
 
   ngOnInit(): void {
    let id = this.router.snapshot.paramMap.get('id');

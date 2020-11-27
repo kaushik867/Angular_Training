@@ -18,7 +18,7 @@ export class PostDetailsComponent implements OnInit {
   currentComment=0;
   commentDisplayed=true;
   constructor(private router: ActivatedRoute, private _httpPost: PostsService, private _httpComm: CommentsService, 
-    private _httpUser: UsersService, private route: Router, private loader: LoaderserviceService ) { }
+    private _httpUser: UsersService, private route: Router, public loader: LoaderserviceService ) { }
   id;
   display=true;
   ngOnInit(): void {

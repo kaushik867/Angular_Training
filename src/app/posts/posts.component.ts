@@ -16,7 +16,7 @@ export class PostsComponent implements OnInit {
   currentPage=0;
   totalPage;
   posts=[];
-  constructor(private _http: PostsService, private route: Router, private loader: LoaderserviceService) { }
+  constructor(private _http: PostsService, private route: Router, public loader: LoaderserviceService) { }
  
   ngOnInit(): void {
     this._http.getPosts().subscribe(data=>{

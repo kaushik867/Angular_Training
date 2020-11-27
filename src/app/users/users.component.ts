@@ -10,7 +10,7 @@ import { UsersService } from '../Services/users.service';
 })
 export class UsersComponent implements OnInit {
 users=[];
-  constructor(private _http: UsersService, private route: Router, private loader: LoaderserviceService) { }
+  constructor(private _http: UsersService, private route: Router, public loader: LoaderserviceService) { }
 
   ngOnInit(): void {
     this._http.getUser().subscribe(data=>{
