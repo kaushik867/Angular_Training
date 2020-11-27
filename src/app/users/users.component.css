@@ -5,9 +5,9 @@
     text-align: center;
     width: auto;
   }
-
+ 
   .container-flex > div {
-    width: 520px;
+    width: 510px;
     margin: 15px;
     text-align: left;
     margin-left: 70px;
@@ -22,29 +22,48 @@
   @media only screen and (min-width: 600px) and (max-width: 1305px )
   {
     .container-flex > div {
-      margin-left: 25%;
-      margin-right: 25%;
+      margin: auto;
+      width:510;
     }
-  }
-
-  .card-header{
-      height: 40px;
-      overflow: hidden;
   }
 
   a:hover{
       cursor: pointer;
   }
-  .container-flex > div > .card:hover{
+  .container-flex > div > .mat-card:hover{
      background-color: paleturquoise;
       
   }
-  .card-header,.card-footer{
-      border: 0;
-  }
+  
   .mat-raised-button{
     background-color: #007bff;
   }
   a{
     text-decoration: none;
   }
+  .mat-card{
+    border: 1px solid #D6D6D6;
+  }
+  .details{
+    display: inline-block;
+    width: 60%;
+}
+.header{
+  display: inline-block;
+  font-weight: bolder;
+  width: 30%;
+  margin-left: 10%;
+}
+.heading{
+  display: block;
+  font-weight: bolder;
+  padding: 10px;
+}
+mat-panel-title{
+  padding: 10px;
+  font-weight: bold;
+  font-size: 13px;
+}
+mat-card-title{
+  font-size: 15px;
+}

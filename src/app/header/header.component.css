@@ -1,6 +1,10 @@
 a:visited{
     color: black !important;
 }
-.mat-raised-button{
+.mat-button{
     background-color: inherit;
+    text-align: left;
 }
+.example-spacer {
+    flex: 1 1 auto;
+  }

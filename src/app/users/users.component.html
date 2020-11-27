@@ -1,12 +1,87 @@
-<div class="container-flex my-5 mx-5">
-    <div  *ngFor="let items of users">
-        <div class="card">
-            <div class=card-header>
-                {{items.id +".   "+items.name}} 
-            </div>
-            <div class=card-footer>
-                <a mat-raised-button class="float-right" [routerLink]="['/users',items.id]">View Details</a>
-            </div>
-        </div>
+<mat-toolbar color="primary">
+    <span>Users</span>
+</mat-toolbar>
+<app-loader *ngIf="loader.isLoading | async"></app-loader>
+<div class="container-flex mx-5">
+    <div *ngFor="let user of users">
+        <mat-card>
+            <mat-card-title>{{user.id +".   "+user.name}} </mat-card-title>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            User Details
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="header">
+                        Name :
+                    </div>
+                    <div class="details">
+                        {{user.name}}
+                    </div>
+                    <div class="header">
+                        User Name :
+                    </div>
+                    <div class="details">
+                        {{user.username}}
+                    </div>
+                    <div class="header">
+                        Email :
+                    </div>
+                    <div class="details">
+                        {{user.email}}
+                    </div>
+                    <div class="header">
+                        Phone :
+                    </div>
+                    <div class="details">
+                        {{user.phone}}
+                    </div>
+                    <div class="heading">
+                        Address Details :
+                    </div>
+                    <div class="header">
+                        Street :
+                    </div>
+                    <div class="details">
+                        {{user.address.street}}
+                    </div>
+                    <div class="header">
+                        City : 
+                    </div>
+                    <div class="details">
+                        {{user.address.city}}
+                    </div>
+                    <div class="header">
+                        Pin Code :
+                    </div>
+                    <div class="details">
+                        {{user.address.zipcode}}
+                    </div>
+                    <div class="heading">
+                        Company Details:
+                    </div>
+                    <div class="header">
+                        Comapany name : 
+                    </div>
+                    <div class="details">
+                        {{user.company.name}}
+                    </div>
+                    <div class="header">
+                        Catch phrase :
+                    </div>
+                    <div class="details">
+                        {{user.company.catchPhrase}}
+                    </div>
+                    <div class="header">
+                        Business :
+                    </div>
+                    <div class="details">
+                        {{user.company.bs}}
+                    </div>
+                </mat-expansion-panel>
+        </mat-card>
     </div>
 </div>
+
+
+

@@ -22,7 +22,6 @@ const routes: Routes = [
     ]
   },
   { path: 'users' , component: UsersComponent},
-  { path: 'users/:id' , component: UserDetailsComponent},
   { path: 'error' , component: ServerErrorComponent},
   { path: '**' , component: PageNotFoundComponent}
 ];

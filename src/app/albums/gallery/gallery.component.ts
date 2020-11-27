@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoaderserviceService } from 'src/app/loader/loaderservice.service';
 import { PhotosService } from 'src/app/Services/photos.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class GalleryComponent implements OnInit {
 id;
 display=true;
 photos=[];
-  constructor(private router: ActivatedRoute, private _http: PhotosService, private route: Router) { }
+  constructor(private router: ActivatedRoute, private _http: PhotosService, private route: Router,
+    private loader: LoaderserviceService) { }
 
   ngOnInit(): void {
    let id = this.router.snapshot.paramMap.get('id');

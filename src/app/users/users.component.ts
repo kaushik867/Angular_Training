@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoaderserviceService } from '../loader/loaderservice.service';
 import { UsersService } from '../Services/users.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UsersService } from '../Services/users.service';
 })
 export class UsersComponent implements OnInit {
 users=[];
-  constructor(private _http: UsersService, private route: Router) { }
+  constructor(private _http: UsersService, private route: Router, private loader: LoaderserviceService) { }
 
   ngOnInit(): void {
     this._http.getUser().subscribe(data=>{

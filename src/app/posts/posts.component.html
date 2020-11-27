@@ -1,20 +1,19 @@
-
-<div class="container-flex my-5 mx-5">
-    <div  *ngFor="let items of posts | slice:startIndex:lastIndex">
-        <div class="card">
-            <div class=card-header>
-                {{items.id +".   "+items.title}} 
-            </div>
-            <div class=card-footer>
-                <a mat-raised-button class="float-right" [routerLink]="['/posts',items.id]">View post</a>
-            </div>
-        </div>
+<mat-toolbar color="primary"> Posts</mat-toolbar>
+<app-loader *ngIf="loader.isLoading | async"></app-loader>
+<div class="container-flex mx-5">
+    <div  *ngFor="let post of posts | slice:currentPage*dataLen:(currentPage+1)*dataLen">
+        <mat-card class="my-1">
+            <mat-card-title align="start">
+                {{post.id +".   "+post.title}} 
+            </mat-card-title>
+            <mat-card-actions align="end">
+                <a mat-raised-button [routerLink]="['/posts',post.id]">View post</a>
+            </mat-card-actions>
+        </mat-card>
     </div>
 </div>
 
-<div class="my-3">
-    <nav aria-label="Page navigation"> 
-        <a class="page-link float-left my-3 mx-3"  *ngIf="currentPage > 0" (click)='nextPrevious(false)'>Previous</a>
-        <a class="page-link float-right my-3 mx-3" *ngIf="currentPage+1 < totalPage" (click)='nextPrevious(true)'>Next</a>
-    </nav>
-</div>
+<mat-paginator [length]="totalPage"
+              [pageSize]="dataLen"
+              (page)="pageEvent = $event; currentPage=pageEvent.pageIndex">
+</mat-paginator>

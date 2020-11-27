@@ -25,10 +25,7 @@
   .card-body{
     height:150px;
   }
-  img{
-    height: 100%;
-    width:100%;
-  }
+ 
   .error-template {
     padding: 40px 15px;text-align: center;
 }
@@ -63,4 +60,21 @@
   .card-body{
     height: 250px;
   }
+}
+mat-card{
+  border: 1px solid #D6D6D6
+}
+mat-card-content{
+  height:50px;
+  
+}
+a{
+  text-decoration: none;
+}
+.mat-raised-button{
+  background-color: #007bff;
+  color: white;
+}
+.spacer {
+  flex: 1 1 auto;
 }

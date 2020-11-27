@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoaderserviceService } from '../loader/loaderservice.service';
 import { CommentsService } from '../Services/comments.service';
 import { PostsService } from '../Services/posts.service';
 import { UsersService } from '../Services/users.service';
@@ -17,7 +18,7 @@ export class PostDetailsComponent implements OnInit {
   currentComment=0;
   commentDisplayed=true;
   constructor(private router: ActivatedRoute, private _httpPost: PostsService, private _httpComm: CommentsService, 
-    private _httpUser: UsersService, private route: Router ) { }
+    private _httpUser: UsersService, private route: Router, private loader: LoaderserviceService ) { }
   id;
   display=true;
   ngOnInit(): void {
@@ -56,10 +57,4 @@ export class PostDetailsComponent implements OnInit {
     return this.totalComment;
   }
 
-  displayComment(){
-    if(this.commentDisplayed)
-      return this.commentDisplayed=false;
-    else
-    return this.commentDisplayed=true;
-  }
 }

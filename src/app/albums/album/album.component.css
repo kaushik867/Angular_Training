@@ -10,16 +10,11 @@
     text-align: center;
     margin-left: 25px;
   }
-  .card-header{
-      height: 90px;
-      overflow: hidden;
-      text-align: left;
-  }
 
   a:hover{
       cursor: pointer;
   }
-  .container-flex > div > .card:hover{
+  .container-flex > div > mat-card:hover{
      background-color: paleturquoise;
       
   }
@@ -50,4 +45,16 @@
     }
     a{
        text-decoration: none;
+    }
+    mat-card{
+       height: 165px;
+    }
+    mat-card-title{
+       text-align: left;
+       font-size: 15px;
+       height: 55px;
+       padding: 2px;
+    }
+    mat-card-action{
+       vertical-align: bottom;
     }

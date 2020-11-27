@@ -1,26 +1,23 @@
+<mat-toolbar color="primary">
+    <span>Albums</span>
+</mat-toolbar>
+<app-loader *ngIf="loader.isLoading | async"></app-loader>
 <div class="container-flex my-5 mx-5">
-    <div  *ngFor="let items of albums | slice: startIndex:lastindex">
+    <div  *ngFor="let album of albums | slice: currentPage*dataLen:(currentPage+1)*dataLen">
         <ng-container *ngFor="let user of users">
-            <ng-container *ngIf="user.id == items.userId">
-                <div class="card my-1">
-                    <div class=card-header>
-                        {{items.id + "  " + items.title }} 
-                    </div>
-                    <div class="card-body">
-                        <b>By :</b>{{user.name}}
-                    </div>
-                    <div class=card-footer>
-                        <a mat-raised-button  class="float-right" [routerLink]="['gallery',items.id]">View Photos</a>
-                    </div>
-                </div>
+            <ng-container *ngIf="user.id == album.userId">
+                <mat-card class="my-1">
+                   <mat-card-title>{{album.id + "  " + album.title }} </mat-card-title>
+                   <mat-card-content align="end">by : {{user.name}}</mat-card-content>
+                   <mat-card-actions align="end"><a mat-raised-button [routerLink]="['gallery',album.id]">View Photos</a></mat-card-actions>
+                </mat-card>
             </ng-container>
         </ng-container>
         
     </div>
 </div>
-<div class="my-3">
-    <nav aria-label="Page navigation"> 
-        <a class="page-link float-left my-3 mx-3"  *ngIf="currentPage > 0" (click)='nextPrevious(false)'>Previous</a>
-        <a class="page-link float-right my-3 mx-3" *ngIf="currentPage+1 < totalPages" (click)='nextPrevious(true)'>Next</a>
-    </nav>
-</div>
+
+<mat-paginator [length]="totalPages"
+              [pageSize]="dataLen"
+              (page)="pageEvent = $event; currentPage=pageEvent.pageIndex">
+</mat-paginator>

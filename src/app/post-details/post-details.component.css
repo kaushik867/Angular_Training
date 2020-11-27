@@ -8,59 +8,29 @@
 .error-actions .btn {
      margin-right:10px;
 }
-
-.heading{
-    display: block;
-    font-weight: bold;
-    font-size: 20px;
-}
-.content{
-    text-justify: auto;
-}
-
-.commentHeading{
-    font-weight: bold;
-    display: block;
-    margin-left: 20px;
-    border: 2px solid #D6D6D6;
-    border-radius: 10px;
-    width: 60%;
-    margin-top: 3px;
-    padding: 10px;
-    overflow: hidden;
-}
-.commentBody{
-    display: block;
-    margin-left: 50px;
-    border: 2px solid #D6D6D6;
-    padding: 5px;
-    margin-bottom: 3px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-.con{
-    height: 400px;
-}
-.commentDiv{
-    border: 1px solid #D6D6D6;
-    margin: 2px;
-    border-radius: 10px;
-}
-.commentCls{
-    overflow-y: auto;
-    height: 250px;
-    border: 3px solid #D6D6D6;
-}
-@media only screen and (min-width: 300px) and (max-width: 991px){
-    .heading{
-        height:90px;
-    }
-    .commentCls{
-        height: 35%;
-    }
+  mat-card-content{
+      height: 80%;
   }
-  @media only screen and (min-width: 992px){
-    .commentCls{
-        height: 60%;
-    }
+  .mat-raised-button{
+    background-color: #007bff;
+  }
+  .commentTitle{
+      font-size: 15px;
+  }
+  .commentBody{
+      
+      border-radius: 10%;
+      border: 1px solid #D6D6D6;
+  }
+  .titleBody{
+      height:80px;
+  }
+  a{
+      text-decoration: none;
+  }
+  .spacer{
+    flex: 1 1 auto;
+  }
+  .spacer > .mat-raised-button{
+      color: #ffffff;
   }

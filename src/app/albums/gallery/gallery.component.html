@@ -1,11 +1,18 @@
-<div class="container-flex my-5 mx-5" *ngIf="check() ; else noDataFound">
-    <ng-container *ngFor="let items of photos">
-        <div *ngIf="id == items.albumId">
-            <div class="card">
-                <div class=card-body>
-                    <img src={{items.url}}>
-                </div>
-            </div>
+<mat-toolbar color="primary">
+    <span>Gallery</span> 
+    <span class="spacer">
+        <a [routerLink]="['/album']" mat-raised-button class="my-2 mx-2 float-right">Back</a>
+    </span>
+</mat-toolbar>
+<app-loader *ngIf="loader.isLoading | async"></app-loader>
+
+<div class="container-flex mx-5" *ngIf="check() ; else noDataFound">
+    <ng-container *ngFor="let photo of photos">
+        <div *ngIf="id == photo.albumId">
+            <mat-card class="mx-2 my-2">
+                <img mat-card-image src="{{photo.url}}">
+                <mat-card-content align="start"><b>Title : </b>{{photo.title}}</mat-card-content>
+            </mat-card>
         </div>
     </ng-container>
 </div>

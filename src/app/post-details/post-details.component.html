@@ -1,32 +1,39 @@
+<mat-toolbar color="primary">
+    <span>Post Details</span>
+    <span class="spacer">
+        <a mat-raised-button [routerLink]="['../']" class="my-2 mx-2 float-right">Back</a>
+    </span>
+</mat-toolbar>
+<app-loader *ngIf="loader.isLoading | async"></app-loader>
 <ng-container *ngIf="check(); else elseBlock">
-    <ng-container *ngFor="let items of posts">
+    <ng-container *ngFor="let post of posts">
         <ng-container *ngFor="let user of users">
-            <div class="container con my-5" *ngIf="id == items.id && user.id==items.userId">
-                <div class="heading">
-                    {{items.title}} <p class="float-right">by : {{user.name}}</p>
-                </div>
-                <hr>
-                <div class="content">
-                    {{items.body}}
-                </div>   
-                <button mat-raised-button class="btn btn-primary mt-5" (click)="displayComment()">
+           
+            <mat-card class="my-5 mx-5" *ngIf="id == post.id && user.id==post.userId">
+                <mat-card-title>
+                    {{post.title}}
+                </mat-card-title>
+                <mat-divider></mat-divider>
+                <mat-card-content align="start" class="py-2 titleBody">{{post.body}}</mat-card-content>
+                <mat-card-actions align="end"><button mat-raised-button  (click)="commentDisplayed = !commentDisplayed">
                     comments({{comment()}})
-                </button> 
-                <div [class.d-none]="commentDisplayed" class="commentCls">
-                   <ng-container *ngFor="let comment of comments">
-                        <ng-container *ngIf="id == comment.postId">
-                            <div class="commentDiv">
-                                <div class="commentHeading">
+                </button> </mat-card-actions>
+                <div [class.d-none]="commentDisplayed">
+                    <ng-conatiner  *ngFor="let comment of comments">
+                        <ng-conatiner *ngIf="id == comment.postId">
+                            <mat-card class="my-1 mx-5 commentBody">
+                                <mat-card-title class="my-1 commentTitle">
                                     {{comment.name+" ("+comment.email+")"}}
-                                </div>
-                                <div class="commentBody">
-                                    {{comment.body}}
-                                </div>
-                            </div>   
-                        </ng-container>
-                   </ng-container>
-                </div>      
-            </div>
+                                </mat-card-title>
+                                <mat-divider></mat-divider>
+                                <mat-card-content>{{comment.body}}</mat-card-content>
+                            </mat-card>
+                        </ng-conatiner>
+                    </ng-conatiner>
+                </div>
+                
+            </mat-card>
+            
         </ng-container>
     </ng-container>
 </ng-container>
