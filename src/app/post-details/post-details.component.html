@@ -15,8 +15,8 @@
                 </mat-card-title>
                 <mat-divider></mat-divider>
                 <mat-card-content align="start" class="py-2 titleBody">{{post.body}}</mat-card-content>
-                <mat-card-actions align="end"><button mat-raised-button  (click)="commentDisplayed = !commentDisplayed">
-                    comments({{comment()}})
+                <mat-card-actions align="end"><button class="btn" mat-raised-button (click)="commentDisplayed = !commentDisplayed">
+                    <b>comments({{comment()}})</b>
                 </button> </mat-card-actions>
                 <div [class.d-none]="commentDisplayed">
                     <ng-conatiner  *ngFor="let comment of comments">

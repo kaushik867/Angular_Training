@@ -7,7 +7,7 @@
         <ng-container *ngFor="let user of users">
             <ng-container *ngIf="user.id == album.userId">
                 <mat-card class="my-1">
-                   <mat-card-title>{{album.id + "  " + album.title }} </mat-card-title>
+                   <mat-card-title>{{album.id + ".  " + album.title }} </mat-card-title>
                    <mat-card-content align="end">by : {{user.name}}</mat-card-content>
                    <mat-card-actions align="end"><a mat-raised-button [routerLink]="['gallery',album.id]">View Photos</a></mat-card-actions>
                 </mat-card>

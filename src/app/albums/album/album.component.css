@@ -47,12 +47,12 @@
        text-decoration: none;
     }
     mat-card{
-       height: 165px;
+       height: 185px;
     }
     mat-card-title{
        text-align: left;
        font-size: 15px;
-       height: 55px;
+       height: 70px;
        padding: 2px;
     }
     mat-card-action{
