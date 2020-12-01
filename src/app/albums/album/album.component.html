@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar>
     <span>Albums</span>
 </mat-toolbar>
 <app-loader *ngIf="loader.isLoading | async"></app-loader>
@@ -9,7 +9,7 @@
                 <mat-card class="my-1">
                    <mat-card-title>{{album.id + ".  " + album.title }} </mat-card-title>
                    <mat-card-content align="end">by : {{user.name}}</mat-card-content>
-                   <mat-card-actions align="end"><a mat-raised-button [routerLink]="['gallery',album.id]">View Photos</a></mat-card-actions>
+                   <mat-card-actions align="end"><a mat-raised-button color="primary" [routerLink]="['gallery',album.id]">View Photos</a></mat-card-actions>
                 </mat-card>
             </ng-container>
         </ng-container>

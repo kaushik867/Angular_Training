@@ -1,7 +1,7 @@
-<mat-toolbar color="primary">
+<mat-toolbar>
     <span>Post Details</span>
     <span class="spacer">
-        <a mat-raised-button [routerLink]="['../']" class="my-2 mx-2 float-right">Back</a>
+        <a mat-raised-button color="primary" [routerLink]="['../']" class="my-2 mx-2 float-right">Back</a>
     </span>
 </mat-toolbar>
 <app-loader *ngIf="loader.isLoading | async"></app-loader>
@@ -14,9 +14,9 @@
                     {{post.title}}
                 </mat-card-title>
                 <mat-divider></mat-divider>
-                <mat-card-content align="start" class="py-2 titleBody">{{post.body}}</mat-card-content>
-                <mat-card-actions align="end"><button class="btn" mat-raised-button (click)="commentDisplayed = !commentDisplayed">
-                    <b>comments({{comment()}})</b>
+                <mat-card-content align="start" class="py-5 titleBody">{{post.body}}</mat-card-content>
+                <mat-card-actions align="end"><button color="primary" mat-raised-button color="primary" (click)="commentDisplayed = !commentDisplayed">
+                    comments({{comment()}})
                 </button> </mat-card-actions>
                 <div [class.d-none]="commentDisplayed">
                     <ng-conatiner  *ngFor="let comment of comments">

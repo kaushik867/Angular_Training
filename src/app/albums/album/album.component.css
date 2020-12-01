@@ -14,10 +14,7 @@
   a:hover{
       cursor: pointer;
   }
-  .container-flex > div > mat-card:hover{
-     background-color: paleturquoise;
-      
-  }
+ 
   @media only screen and (max-width: 300px) {
     .container-flex > div{
        margin-left: 0px;
@@ -40,14 +37,12 @@
        overflow: hidden;
     } }
 
-    .mat-raised-button{
-      background-color: #007bff;
-    }
+   
     a{
        text-decoration: none;
     }
     mat-card{
-       height: 185px;
+       height: 95%;
     }
     mat-card-title{
        text-align: left;

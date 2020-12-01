@@ -11,19 +11,18 @@
   mat-card-content{
       height: 80%;
   }
-  .mat-raised-button{
-    background-color: #007bff;
-  }
+
   .commentTitle{
       font-size: 15px;
+      overflow: hidden;
   }
   .commentBody{
-      
       border-radius: 10%;
       border: 1px solid #D6D6D6;
+      overflow: hidden;
   }
   .titleBody{
-      height:80px;
+      height:20%;
   }
   a{
       text-decoration: none;
@@ -34,3 +33,4 @@
   .spacer > .mat-raised-button{
       color: #ffffff;
   }
+  

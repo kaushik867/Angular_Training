@@ -7,7 +7,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 const materialComponents =[
   MatProgressSpinnerModule,
   MatButtonModule,
@@ -16,7 +17,9 @@ const materialComponents =[
   MatCardModule,
   MatDividerModule,
   MatExpansionModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatSidenavModule,
+  MatListModule
 ]
 
 

@@ -29,10 +29,10 @@
   a:hover{
       cursor: pointer;
   }
-  .container-flex > div > mat-card:hover{
+  /* .container-flex > div > mat-card:hover{
      background-color: paleturquoise;
       
-  }
+  } */
 
   a{
       text-decoration: none;
@@ -61,9 +61,6 @@
     } 
   }
 
-  .mat-raised-button{
-    background-color: #007bff;
-  }
 
   mat-card-title{
     font-size: 17px;

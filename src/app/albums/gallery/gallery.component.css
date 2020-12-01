@@ -18,10 +18,7 @@
   a:hover{
       cursor: pointer;
   }
-  .container-flex > div > .card:hover{
-     background-color: paleturquoise;
-      
-  }
+  
   .card-body{
     height:150px;
   }
@@ -65,16 +62,13 @@ mat-card{
   border: 1px solid #D6D6D6
 }
 mat-card-content{
-  height:50px;
+  height:10%;
   
 }
 a{
   text-decoration: none;
 }
-.mat-raised-button{
-  background-color: #007bff;
-  color: white;
-}
+
 .spacer {
   flex: 1 1 auto;
 }

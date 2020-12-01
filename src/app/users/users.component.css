@@ -7,13 +7,14 @@
   }
  
   .container-flex > div {
-    width: 510px;
+    width: 40%;
     margin: 15px;
     text-align: left;
-    margin-left: 70px;
+    margin-left: 6%;
   }
   @media only screen and (max-width: 600px) {
       .container-flex > div{
+        width: 100%;
          margin-left: 0px;
          margin-right: 0px;
          overflow: hidden;
@@ -30,11 +31,6 @@
   a:hover{
       cursor: pointer;
   }
-  .container-flex > div > .mat-card:hover{
-     background-color: paleturquoise;
-      
-  }
-  
   .mat-raised-button{
     background-color: #007bff;
   }
