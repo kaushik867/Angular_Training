@@ -7,9 +7,10 @@ import { UserModule } from '../user/user.module';
 import { AlbumsComponent } from './albums/albums.component';
 import { MaterialModule } from '../material/material.module';
 import { Routes, RouterModule } from '@angular/router';
+import { LoderModuleModule } from '../loader/loder-module/loder-module.module';
 
 const proRoute: Routes = [
-  { path: 'album' , component: AlbumsComponent , 
+  { path: '' , component: AlbumsComponent , 
 children:[
   {path: '' , component: AlbumComponent},
   {path: 'gallery/:id' , component: GalleryComponent},
@@ -26,7 +27,7 @@ children:[
   imports: [
     CommonModule,
     HttpClientModule,
-    UserModule,
+    LoderModuleModule,
     MaterialModule,
     RouterModule.forChild(proRoute)
   ],

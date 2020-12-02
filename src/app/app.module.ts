@@ -12,9 +12,6 @@ import { ServerErrorComponent } from './server-error/server-error.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InterceptorService } from './loader/interceptor.service';
 import { MaterialModule } from './material/material.module'
-import { PostModule } from './post/post.module';
-import { AlbumGalleryModule } from './album-gallery/album-gallery.module';
-import { UserModule } from './user/user.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,10 +27,7 @@ import { UserModule } from './user/user.module';
     HttpClientModule,
     NgbModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    PostModule,
-    UserModule,
-    AlbumGalleryModule
+    MaterialModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}

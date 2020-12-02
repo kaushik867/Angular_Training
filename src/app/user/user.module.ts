@@ -6,26 +6,28 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from '../loader/interceptor.service';
 import { LoaderComponent } from '../loader/loader.component';
 import { RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import { LoderModuleModule } from '../loader/loder-module/loder-module.module';
 
 
 const proRoute: Routes=[
-  { path: 'users' , component: UsersComponent},
-]
+    {path: '' , component: UsersComponent},
+    {path: '**', component: PageNotFoundComponent}
+];
 
 @NgModule({
   declarations: [
-    UsersComponent,
-    LoaderComponent
+    UsersComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     HttpClientModule,
+    LoderModuleModule,
     RouterModule.forChild(proRoute)
   ],
   exports:[
-    UsersComponent,
-    LoaderComponent
+    UsersComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}

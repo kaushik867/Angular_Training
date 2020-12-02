@@ -5,13 +5,15 @@ import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from '../loader/interceptor.service';
 import { MaterialModule } from '../material/material.module';
-import { UserModule } from '../user/user.module';
 import { RouterModule, Routes } from '@angular/router';
+import { LoderModuleModule } from '../loader/loder-module/loder-module.module';
 
 const proRoute: Routes= [
-  { path: 'posts' , component: PostsComponent},
-  { path: 'posts/:id' , component: PostDetailsComponent},
-]
+    {path: '' , children:[
+      { path:'' , component: PostsComponent},
+      { path: 'details/:id', component:PostDetailsComponent}
+    ]}
+];
 
 @NgModule({
   declarations: [
@@ -22,7 +24,7 @@ const proRoute: Routes= [
     CommonModule,
     HttpClientModule,
     MaterialModule,
-    UserModule,
+    LoderModuleModule,
     RouterModule.forChild(proRoute)
   ],
   exports:[

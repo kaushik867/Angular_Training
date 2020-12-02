@@ -7,7 +7,7 @@
                 {{post.id +".   "+post.title}} 
             </mat-card-title>
             <mat-card-actions align="end">
-                <a mat-raised-button color="primary" [routerLink]="['/posts',post.id]">View post</a>
+                <a mat-raised-button color="primary" [routerLink]="['details',post.id]">View post</a>
             </mat-card-actions>
         </mat-card>
     </div>
