@@ -14,7 +14,11 @@
   a:hover{
       cursor: pointer;
   }
- 
+  
+.container-flex > div > mat-card:hover{
+   border: 1px solid #3db5eb;
+}
+
   @media only screen and (max-width: 300px) {
     .container-flex > div{
        margin-left: 0px;
@@ -52,4 +56,11 @@
     }
     mat-card-action{
        vertical-align: bottom;
+    }
+    .mat-raised-button{
+      color: black;
+    }
+    
+    .mat-raised-button:hover{
+      color:white;
     }

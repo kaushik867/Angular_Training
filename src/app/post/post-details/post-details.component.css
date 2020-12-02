@@ -30,7 +30,10 @@
   .spacer{
     flex: 1 1 auto;
   }
-  .spacer > .mat-raised-button{
-      color: #ffffff;
+
+  .mat-raised-button{
+      color: #000000;
   }
-  
+  .mat-raised-button:hover{
+      color:#FFFFFF;
+  }

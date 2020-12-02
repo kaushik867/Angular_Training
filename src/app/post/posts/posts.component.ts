@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
-import { LoaderserviceService } from '../loader/loaderservice.service';
-import { PostsService } from '../Services/posts.service';
+import { LoaderserviceService } from 'src/app/loader/loaderservice.service';
+import { PostsService } from 'src/app/Services/posts.service';
+
 
 @Component({
   selector: 'app-posts',

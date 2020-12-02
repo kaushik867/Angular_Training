@@ -63,7 +63,9 @@ mat-card{
 }
 mat-card-content{
   height:10%;
-  
+}
+.container-flex > div > mat-card:hover{
+  border: 1px solid #3db5eb;
 }
 a{
   text-decoration: none;
@@ -71,4 +73,11 @@ a{
 
 .spacer {
   flex: 1 1 auto;
+}
+.mat-raised-button{
+  color: black;
+}
+
+.mat-raised-button:hover{
+  color:white;
 }

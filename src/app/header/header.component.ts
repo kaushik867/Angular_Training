@@ -9,6 +9,7 @@ import { LoaderserviceService } from '../loader/loaderservice.service';
 export class HeaderComponent implements OnInit {
 public isCollapsed=true;
 opened=false;
+hello=true;
   constructor(public loader: LoaderserviceService) { }
 
   ngOnInit(): void {

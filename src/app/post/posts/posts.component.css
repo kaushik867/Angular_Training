@@ -29,11 +29,13 @@
   a:hover{
       cursor: pointer;
   }
-  /* .container-flex > div > mat-card:hover{
-     background-color: paleturquoise;
+  .container-flex > div > mat-card:hover{
+     border: 1px solid #3db5eb;
       
-  } */
-
+  }
+.mat-raised-button{
+  color: black;
+}
   a{
       text-decoration: none;
   }
@@ -73,3 +75,8 @@
   mat-card-action{
     height: 30%;
   }
+  
+  .mat-raised-button:hover{
+    color: white;
+  }
+  

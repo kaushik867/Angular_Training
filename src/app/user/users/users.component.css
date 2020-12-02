@@ -5,7 +5,9 @@
     text-align: center;
     width: auto;
   }
- 
+  .container-flex > div > mat-card:hover{
+    border: 1px solid #3db5eb;
+ }
   .container-flex > div {
     width: 40%;
     margin: 15px;

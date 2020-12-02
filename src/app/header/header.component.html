@@ -2,7 +2,7 @@
 <mat-sidenav-container>
   <mat-sidenav mode="over" [(opened)]='opened'>
     <mat-toolbar color="primary">
-      Menu
+      Menu 
     </mat-toolbar>
     <mat-list>
       <a mat-list-item [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"> Home </a>
@@ -13,7 +13,7 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <mat-icon (click)='opened = !opened'>menu</mat-icon>
+      <mat-icon (mouseover)="opened = !opened">menu</mat-icon> 
     </mat-toolbar>
     <mat-divider></mat-divider>
     <ng-content></ng-content>
